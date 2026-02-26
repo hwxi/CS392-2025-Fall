@@ -19,7 +19,7 @@ public class Final_01 {
 	// be turned into its corresponding lower case.
 	// This stream should be built on top of pg2701_char$strmize
 	// which is already implemented in Final_00.
-	// In particular, you should NOT use Java library function
+	// In particular, you should NOT use Java library functions
 	// for processing files!
     }
     public static void main (String[] args) {
