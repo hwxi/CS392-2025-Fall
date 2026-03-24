@@ -278,6 +278,23 @@ public class FnListSUtil {
 	}
     }
 //
+/*
+    private static<T>
+	FnList<T>
+	insertSort_insert(FnList<T> xs, T x0, ToIntBiFunction<T,T> cmp) {
+	FnList<T> ys = nil();
+	while(xs.consq()) {
+	    if (cmp(x0, xs.hd()) <= 0) {
+		return rappend(ys, cons(x0, xs));
+	    } else {
+		ys = cons(xs.hd(), ys);
+		xs = xs.tl();
+	    }
+	}
+	return cons(x0, ys);
+    }
+*/
+//
     public static<T>
 	FnA1sz<T> toArray(FnList<T> xs) {
 	return xs.toArray();
@@ -360,7 +377,7 @@ public class FnListSUtil {
 	T x0, y0;
 	final T pt = xs.hd(); xs = xs.tl();
 	FnList<T> us = nil(); //  those <= pivot
-	FnList<T> vs = nil(); //  those >> pivate
+	FnList<T> vs = nil(); //  those >> pivot
 	// HX: pivoting for [xs]
 	while (!nilq(xs)) {
 	    x0 = xs.hd(); xs = xs.tl();

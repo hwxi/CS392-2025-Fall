@@ -1,4 +1,8 @@
 //
+import Library.FnList.*;
+import Library.LnStrm.*;
+//
+//
 import java.io.*;
 import java.util.*;
 import java.util.function.Consumer;
@@ -12,11 +16,12 @@ class LnStrmTest {
     }
     public static LnStrm<Integer> sieveMethod(LnStrm<Integer> fxs) {
 	LnStcn<Integer> cxs = fxs.eval0();
-	Integer hd = cxs.head;
-	LnStrm<Integer> tl = cxs.tail;
+	Integer hd = cxs.hd();
+	LnStrm<Integer> tl = cxs.tl();
 	return new LnStrm<Integer>
 	    (() -> new LnStcn<Integer>(hd, sieveMethod(tl.filter0((ix) -> ix.intValue() % hd > 0))));
     }
+
     public static void main(String[] args) {
 	LnStrm<Integer> intFrom2 = intFrom(2);
 	LnStrm<Integer> thePrimes = sieveMethod(intFrom2);
